@@ -14,6 +14,10 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const [navMobile, setNavMobile] = useState(false);
 
+  const handleClose = () => {
+    setNavMobile(false);
+  };
+
   useEffect(() => {
     // scroll event
     window.addEventListener("scroll", () => {
@@ -59,7 +63,7 @@ const Header = () => {
       </div>
 
       {/* nav mobile - hide on desktop */}
-      <NavMobile navMobile={navMobile} />
+      <NavMobile navMobile={navMobile} onClose={handleClose} />
     </header>
   );
 };
